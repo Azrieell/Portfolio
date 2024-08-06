@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4 lg:px-8 xl:px-60 mt-14">
+  <div class="container mx-auto px-4 lg:px-8 xl:px-60 mt-16 md:mt-24 lg:mt-32 fade-in" ref="mainContainer">
     <div class="max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
       <h3
         class="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white mt-4 sm:mt-6 md:mt-8 lg:mt-10 leading-tight"
@@ -32,6 +32,12 @@
     },
     mounted() {
       this.startTyping();
+      this.addScrollEvent();
+      this.fadeInOnLoad();
+    },
+    beforeUnmount() {
+      clearInterval(this.intervalId);
+      window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
       startTyping() {
@@ -45,16 +51,48 @@
             currentIndex = 0;
           }
         }, this.typingSpeed);
+      },
+      handleScroll() {
+        const elements = document.querySelectorAll('.fade-in');
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('is-visible');
+          }
+        });
+      },
+      addScrollEvent() {
+        window.addEventListener('scroll', this.handleScroll);
+        this.handleScroll(); // Check visibility on mount
+      },
+      fadeInOnLoad() {
+        const container = this.$refs.mainContainer;
+        if (container) {
+          // Trigger fade-in effect
+          container.classList.add('is-visible');
+          setTimeout(() => {
+            // Remove fade-in class after animation completes
+            container.classList.remove('fade-in');
+          }, 600); // Duration of the fade-in effect
+        }
       }
-    },
-    beforeUnmount() {
-      clearInterval(this.intervalId);
     }
   };
 </script>
 
-<style>
+<style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   .highlight {
     font-family: 'Montserrat', sans-serif;

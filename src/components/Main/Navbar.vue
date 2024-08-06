@@ -4,9 +4,10 @@
       <div class="flex items-center justify-between">
         <!-- Logo and Brand Name -->
         <a href="#" class="flex items-center flex-shrink-0">
-          <span class="self-center font-semibold whitespace-nowrap dark:text-white ml-2 text-2xl sm:text-3xl mr-8 sm:mr-16"
+          <span
+            class="self-center font-semibold whitespace-nowrap dark:text-white ml-2 text-2xl sm:text-3xl mr-8 sm:mr-16"
             style="font-family: 'Montserrat', sans-serif;">
-            Azriel  
+            Azriel
           </span>
         </a>
 
@@ -40,9 +41,9 @@
                 aria-current="page" style="font-family: 'Montserrat', sans-serif;">HOME</a>
             </li>
             <li>
-              <a @click="scrollToProject" href="#"
-                class="block py-2 px-2 text-center lg:text-left text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-800 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 text-1xl "
-                style="font-family: 'Montserrat', sans-serif;">CERTIFICATION</a>
+              <a @click="scrollToContact" href="#"
+                class="block py-2 px-2 text-gray-700 text-center lg:text-left border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-800 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 text-1xl "
+                style="font-family: 'Montserrat', sans-serif;">SKILLS</a>
             </li>
             <li>
               <a @click="scrollToAbout" href="#"
@@ -50,9 +51,9 @@
                 style="font-family: 'Montserrat', sans-serif;">PROJECT</a>
             </li>
             <li>
-              <a @click="scrollToContact" href="#"
-                class="block py-2 px-2 text-gray-700 text-center lg:text-left border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-800 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 text-1xl "
-                style="font-family: 'Montserrat', sans-serif;">SKILLS</a>
+              <a @click="scrollToProject" href="#"
+                class="block py-2 px-2 text-center lg:text-left text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-800 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 text-1xl "
+                style="font-family: 'Montserrat', sans-serif;">CERTIFICATION</a>
             </li>
             <li class="lg:ml-6">
               <button type="button"
